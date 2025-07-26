@@ -6,7 +6,7 @@ WikiSentry demonstrates modern data engineering and MLOps practices by processin
 
 ## Prerequisites
 
-This sections assumes you are on macOS.
+This section assumes you are on macOS.
 
 ### Docker
 
@@ -22,9 +22,36 @@ orb  # Select Docker when a menu opens.
 
 **Alternative**: You can use Docker Desktop if you prefer the official distribution, but OrbStack typically uses fewer system resources.
 
-### MinIO CLI
+**Verify installation:**
+```bash
+docker --version
+docker compose version
+```
 
-To interact with MinIO objects manually, e.g. for testing purposes, install MinIO CLI
+### Kubernetes
+
+Install k3d -- a minimal Kubernetes distribution that will allow you to spin up a lightweight cluster locally -- and kubectl -- a CLI for managing Kubernetes clusters.
+
+```bash
+brew install k3d kubectl
+```
+
+Additionally, I recommend to install `k9s` -- a terminal-based UI to interact with Kubernetes clusters that most of the time is more convenient than `kubectl`.
+
+```bash
+brew install k9s
+```
+
+**Verify installation:**
+```bash
+k3d version
+kubectl version --client
+k9s version
+```
+
+### MinIO CLI (Optional)
+
+MinIO is an S3-compatible object storage system we'll use for data lake functionality. To interact with it manually for testing purposes, install the MinIO CLI:
 
 ```bash
 brew install minio-mc
