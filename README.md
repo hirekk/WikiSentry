@@ -22,6 +22,34 @@ orb  # Select Docker when a menu opens.
 
 **Alternative**: You can use Docker Desktop if you prefer the official distribution, but OrbStack typically uses fewer system resources.
 
+### MinIO CLI
+
+To interact with MinIO objects manually, e.g. for testing purposes, install MinIO CLI
+
+```bash
+brew install minio-mc
+```
+
+#### Configure MinIO CLI
+
+Run the following to configure MinIO CLI credentials. Make sure the values match whatever is configured in `compose.yaml`.
+
+```bash
+mc alias set local http://localhost:9000 minioadmin minioadmin
+```
+
+#### Test - create a bucket and upload a file
+
+Create a test bucket and upload a file to it.
+
+```bash
+mc mb local/test-bucket
+echo "Hello MinIO" > test.txt
+mc cp test.txt local/test-bucket/
+mc ls local/test-bucket/
+rm test.txt
+```
+
 ## Quick Start
 
 TODO: Add step-by-step deployment commands
