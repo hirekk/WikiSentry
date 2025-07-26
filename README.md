@@ -4,6 +4,28 @@
 
 WikiSentry demonstrates modern data engineering and MLOps practices by processing the live Wikimedia edit feed through a cloud-native architecture deployed locally.
 
+## Prerequisites
+
+This sections assumes you are on macOS.
+
+### Docker
+
+> **Note**: If you already have Docker installed on your system, you can skip this step.
+
+I recommend installing [OrbStack](https://orbstack.dev) for its lightweight runtime. Since the project involves resource-intensive tools like Kafka, Flink and Spark, every bit of efficiency will go a long way.
+
+```bash
+brew install --cask orbstack
+
+orb  # Select Docker when a menu opens.
+```
+
+**Alternative**: You can use Docker Desktop if you prefer the official distribution, but OrbStack typically uses fewer system resources.
+
+## Quick Start
+
+TODO: Add step-by-step deployment commands
+
 ## Overview
 
 WikiSentry provides:
